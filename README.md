@@ -1,30 +1,69 @@
-This is a Kotlin Multiplatform project targeting Android, Desktop (JVM).
+# My Profile App
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Tugas Praktikum Minggu 3 - Pengembangan Aplikasi Mobile (IF25-22017)
+Program Studi Teknik Informatika, Institut Teknologi Sumatera (ITERA)
 
-### Running the apps
+**Nama:** Divania Munthe
+**NIM:** 124140027
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+## Deskripsi
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- Desktop app:
-  - Hot reload: `./gradlew :desktopApp:hotRun --auto`
-  - Standard run: `./gradlew :desktopApp:run`
+Aplikasi profil sederhana yang dibuat menggunakan **Compose Multiplatform**. Aplikasi menampilkan foto profil bulat, nama, bio singkat, dan daftar informasi kontak (email, nomor HP, lokasi). Informasi kontak bisa disembunyikan dan ditampilkan lewat tombol dengan animasi.
 
-### Running tests
+## Fitur
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+- Header dengan foto profil (circular) dan nama
+- Bio / deskripsi singkat
+- Daftar informasi: Email, Phone, Location
+- Tombol untuk menampilkan / menyembunyikan info (dengan `AnimatedVisibility`)
+- Tema warna baby pink
 
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- Desktop tests: `./gradlew :shared:jvmTest`
+## Composable Functions
 
----
+| Composable | Fungsi |
+|---|---|
+| `ProfileHeader` | Menampilkan foto profil bulat dan nama |
+| `ProfileCard` | Card berisi bio dan konten tambahan (slot `content`) |
+| `InfoItem` | Satu baris info: icon, label, dan value |
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## Komponen yang Digunakan
+
+- **Layout:** `Column`, `Row`, `Box`
+- **UI Components:** `Text`, `Button`, `Image`, `Icon`, `Card`
+- **Modifier:** `fillMaxSize`, `fillMaxWidth`, `padding`, `size`, `clip`, `background`
+- **Bonus:** `AnimatedVisibility`
+
+## Screenshot
+
+### Android
+
+![Screenshot Android](screenshots/android.png)
+
+### Desktop
+
+![Screenshot Desktop](screenshots/desktop.png)
+
+## Cara Menjalankan
+
+1. Clone repository ini
+   ```bash
+   git clone <url-repository-kamu>
+   ```
+2. Buka project di Android Studio dan tunggu Gradle sync selesai
+3. Jalankan aplikasi:
+   - **Android:** pilih konfigurasi `androidApp`, lalu klik Run
+   - **Desktop:** jalankan `./gradlew :desktopApp:run` (Windows: `gradlew.bat :desktopApp:run`)
+
+## Struktur Utama
+
+```
+shared/src/commonMain/
+├── kotlin/com/example/myapplicationapp/App.kt   # UI utama dan composable
+└── composeResources/drawable/                   # foto profil
+```
+
+## Tech Stack
+
+- Kotlin Multiplatform
+- Compose Multiplatform (Material 3)
+- Material Icons Extended
