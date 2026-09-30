@@ -37,11 +37,7 @@ Aplikasi profil sederhana yang dibuat menggunakan **Compose Multiplatform**. Apl
 
 ### Android
 
-![Screenshot Android](screenshots/android.png)
-
-### Desktop
-
-![Screenshot Desktop](screenshots/desktop.png)
+![Screenshot Android](Screenshot 2026-10-01 003057.png)
 
 ## Cara Menjalankan
 
